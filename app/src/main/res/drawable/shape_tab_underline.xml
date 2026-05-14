@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 固定下划线：30dp宽 × 2dp高，不会被拉伸 -->
+    <solid android:color="#FFFFFF"/>
+    <corners android:radius="2dp"/>
+    <size android:width="30dp" android:height="2dp"/>
+</shape>

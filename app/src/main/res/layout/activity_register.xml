@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dd524d"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp">
+
+    <!-- 第一行：logo+文字（和登录页完全一致） -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_index_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="亿润美家\n欢迎您的加入"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 第二行：邀请码输入框（允许为空，样式和其他输入框统一） -->
+    <EditText
+        android:id="@+id/et_invite_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edittext_bottom_border"
+        android:hint="请输入邀请码（选填）"
+        android:textColorHint="#ffffff"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="15dp"
+        android:textCursorDrawable="@drawable/cursor_white"/>
+
+    <!-- 第三行：账号输入框（和登录页账号框一致） -->
+    <EditText
+        android:id="@+id/et_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edittext_bottom_border"
+        android:hint="请输入账号"
+        android:textColorHint="#ffffff"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textCursorDrawable="@drawable/cursor_white"
+        android:layout_marginBottom="15dp"/>
+
+    <!-- 第四行：密码输入框（带显示/隐藏按钮，和登录页密码框一致） -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp">
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_bottom_border"
+            android:hint="请输入密码"
+            android:textColorHint="#ffffff"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="60dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textCursorDrawable="@drawable/cursor_white"/>
+
+        <!-- 密码显示/隐藏切换按钮 -->
+        <ImageButton
+            android:id="@+id/btn_toggle_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_eye_close"
+            app:tint="#ffffff"/>
+    </RelativeLayout>
+
+    <!-- 第五行：确认密码输入框（带显示/隐藏按钮） -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="25dp">
+
+        <EditText
+            android:id="@+id/et_confirm_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_bottom_border"
+            android:hint="请确认密码"
+            android:textColorHint="#ffffff"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:paddingRight="60dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textCursorDrawable="@drawable/cursor_white"/>
+
+        <!-- 确认密码显示/隐藏切换按钮 -->
+        <ImageButton
+            android:id="@+id/btn_toggle_confirm_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_eye_close"
+            app:tint="#ffffff"/>
+    </RelativeLayout>
+
+    <!-- 第六行：注册按钮（样式和登录按钮一致） -->
+    <TextView
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/login_btn_bg"
+        android:elevation="2dp"
+        android:layout_marginBottom="20dp"
+        android:text="注册"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- 第七行：已有账号，返回登录 -->
+    <TextView
+        android:id="@+id/tv_back_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已有账号？返回登录"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>

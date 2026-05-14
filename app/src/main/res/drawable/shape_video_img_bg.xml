@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 透明背景（仅用于裁剪图片，不遮挡图片） -->
+    <solid android:color="@android:color/transparent"/>
+    <!-- 圆角半径和Item一致（8dp） -->
+    <corners android:radius="8dp"/>
+</shape>

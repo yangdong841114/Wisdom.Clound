@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/shape_goods_bg"
+    android:padding="8dp"
+    android:layout_margin="5dp">
+
+    <!-- 商品图片 -->
+    <ImageView
+        android:id="@+id/iv_goods_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+
+    <!-- 商品名称 -->
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="示例商品"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <!-- 商品价格 -->
+    <TextView
+        android:id="@+id/tv_goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥99.00"
+        android:textColor="#E53935"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"/>
+
+</LinearLayout>
