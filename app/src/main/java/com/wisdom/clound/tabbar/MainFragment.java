@@ -73,7 +73,7 @@ public class MainFragment extends Fragment {
 
     private void initView(View rootView) {
         ivAvatar = rootView.findViewById(R.id.iv_avatar);
-        tvNickname = rootView.findViewById(R.id.tv_nickname);
+        tvNickname = rootView.findViewById(R.id.tv_userName);
     }
 
     private void showLoginState() {
