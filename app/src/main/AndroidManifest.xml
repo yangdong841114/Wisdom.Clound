@@ -28,6 +28,15 @@
         <activity
             android:name="com.wisdom.clound.ui.RegisterActivity"
             android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.goods.DetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.user.UserIndexActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.user.UserInfoActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

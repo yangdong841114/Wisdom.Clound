@@ -1,7 +1,12 @@
 package com.wisdom.clound.tabbar;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,14 +23,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.wisdom.clound.R;
-import com.wisdom.clound.utils.HttpUtils;
+import com.wisdom.clound.goods.DetailsActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -36,9 +50,9 @@ public class HomeFragment extends Fragment {
     private RecyclerView rvGoods;
 
     // 数据集合
-    private List<HomeFragment.TabBean> tabList = new ArrayList<>();
-    private List<HomeFragment.CategoryBean> categoryList = new ArrayList<>();
-    private List<HomeFragment.GoodsBean> goodsList = new ArrayList<>();
+    private List<TabBean> tabList = new ArrayList<>();
+    private List<CategoryBean> categoryList = new ArrayList<>();
+    private List<GoodsBean> goodsList = new ArrayList<>();
 
     // 选中状态记录
     private TextView selectedTab;
@@ -51,10 +65,20 @@ public class HomeFragment extends Fragment {
     private boolean hasMoreData = true; // 是否有更多数据
 
     // 商品适配器
-    private HomeFragment.GoodsAdapter goodsAdapter;
+    private GoodsAdapter goodsAdapter;
+
+    // OkHttp客户端（全局单例）
+    private OkHttpClient okHttpClient;
+    // 主线程Handler（用于更新UI）
+    private Handler mainHandler = new Handler(Looper.getMainLooper());
+    // 服务器基础地址（必须替换为你的实际地址）
+    private static final String BASE_URL = "https://api.rzkj.qyqd123.cn/Android"; // 示例：局域网IP+端口
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // 初始化OkHttp客户端
+        initOkHttpClient();
+
         // 加载布局
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
@@ -74,6 +98,18 @@ public class HomeFragment extends Fragment {
         getGoodsListFromApi(currentTypesId, currentPage, true);
 
         return rootView;
+    }
+
+    /**
+     * 初始化OkHttpClient
+     */
+    private void initOkHttpClient() {
+        okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(15, TimeUnit.SECONDS)  // 连接超时
+                .readTimeout(15, TimeUnit.SECONDS)     // 读取超时
+                .writeTimeout(15, TimeUnit.SECONDS)    // 写入超时
+                .retryOnConnectionFailure(true)        // 连接失败重试
+                .build();
     }
 
     /**
@@ -97,7 +133,7 @@ public class HomeFragment extends Fragment {
         rvGoods.setLayoutManager(layoutManager);
 
         // 初始化适配器
-        goodsAdapter = new HomeFragment.GoodsAdapter(goodsList);
+        goodsAdapter = new GoodsAdapter(goodsList);
         rvGoods.setAdapter(goodsAdapter);
 
         // 下拉刷新配置
@@ -131,10 +167,49 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    // -------------------------- 网络请求封装 --------------------------
+    /**
+     * OkHttp GET请求封装
+     * @param urlPath 接口路径（相对于BASE_URL）
+     * @param callback 回调
+     */
+    private void getRequest(String urlPath, HttpCallback callback) {
+        String fullUrl = BASE_URL + urlPath;
+        Request request = new Request.Builder()
+                .url(fullUrl)
+                .get()
+                .build();
+
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                // 子线程切换到主线程回调
+                mainHandler.post(() -> callback.onFailed("网络请求失败：" + e.getMessage()));
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    mainHandler.post(() -> callback.onFailed("响应失败：" + response.code()));
+                    return;
+                }
+
+                String result = response.body() != null ? response.body().string() : "";
+                // 子线程切换到主线程回调
+                mainHandler.post(() -> callback.onSuccess(result));
+            }
+        });
+    }
+
+    // 自定义网络请求回调接口
+    private interface HttpCallback {
+        void onSuccess(String result);
+        void onFailed(String error);
+    }
+
     // -------------------------- 1. 获取首页Logo和Banner图片 --------------------------
     private void getHomeImagesFromApi() {
-        // 替换为你的真实图片接口地址，若暂时没有可注释该方法调用
-        HttpUtils.get("/HomeFragment/GetIndexMain", new HttpUtils.HttpCallback() {
+        getRequest("/HomeFragment/GetIndexMain", new HttpCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -157,8 +232,7 @@ public class HomeFragment extends Fragment {
 
     // -------------------------- 2. 获取顶部Tab选项卡数据 --------------------------
     private void getTabListFromApi() {
-        // 替换为你的真实Tab接口地址，若暂时没有可直接用模拟数据
-        HttpUtils.get("/HomeFragment/GetTabs", new HttpUtils.HttpCallback() {
+        getRequest("/HomeFragment/GetTabs", new HttpCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -174,9 +248,9 @@ public class HomeFragment extends Fragment {
             public void onFailed(String error) {
                 // 接口失败时用模拟数据
                 tabList.clear();
-//                tabList.add(new TabBean("self", "自营区"));
-//                tabList.add(new TabBean("hot", "热销区"));
-//                tabList.add(new TabBean("top", "爆款区"));
+                // tabList.add(new TabBean("self", "自营区"));
+                // tabList.add(new TabBean("hot", "热销区"));
+                // tabList.add(new TabBean("top", "爆款区"));
                 addTabsToLayout();
             }
         });
@@ -185,8 +259,7 @@ public class HomeFragment extends Fragment {
     // -------------------------- 3. 获取分类标签数据 --------------------------
     private void getCategoryListFromApi() {
         String url = "/HomeFragment/GetCategories";
-        // 替换为你的真实分类接口地址，若暂时没有可直接用模拟数据
-        HttpUtils.get(url, new HttpUtils.HttpCallback() {
+        getRequest(url, new HttpCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
@@ -202,11 +275,6 @@ public class HomeFragment extends Fragment {
             public void onFailed(String error) {
                 // 接口失败时用模拟数据
                 categoryList.clear();
-//                categoryList.add(new CategoryBean(1, "爆款热销", "https://api.rzkj.qyqd123.cn/Content/WeChat/Index/baokuan.png"));
-//                categoryList.add(new CategoryBean(2, "日用商品", "https://api.rzkj.qyqd123.cn/Content/WeChat/Index/riyong.png"));
-//                categoryList.add(new CategoryBean(3, "数码电子", "https://api.rzkj.qyqd123.cn/Content/WeChat/Index/shuma.png"));
-//                categoryList.add(new CategoryBean(4, "美妆护肤", "https://api.rzkj.qyqd123.cn/Content/WeChat/Index/meizhuang.png"));
-//                categoryList.add(new CategoryBean(5, "品牌零食", "https://api.rzkj.qyqd123.cn/Content/WeChat/Index/lingshi.png"));
                 addCategoriesToLayout();
             }
         });
@@ -222,19 +290,19 @@ public class HomeFragment extends Fragment {
             srlGoods.setRefreshing(true);
         } else {
             // 加载更多时添加"加载中"提示
-            goodsList.add(new HomeFragment.GoodsBean(-1, "加载中...", "", 0, ""));
+            goodsList.add(new GoodsBean(-1, "加载中...", "", 0, ""));
             goodsAdapter.notifyItemInserted(goodsList.size() - 1);
         }
 
-        // 拼接商品API地址（必须替换为你的电脑局域网IP+端口）
+        // 拼接商品API地址
         String url = "/HomeFragment/GetGoodsList?typesId=" + typesId + "&page=" + page;
 
-        HttpUtils.get(url, new HttpUtils.HttpCallback() {
+        getRequest(url, new HttpCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
                     // 解析商品数据（适配你的API格式）
-                    List<HomeFragment.GoodsBean> newGoodsList = parseGoodsData(result);
+                    List<GoodsBean> newGoodsList = parseGoodsData(result);
 
                     // 处理数据：刷新=清空旧数据，加载更多=追加
                     if (isRefresh) {
@@ -305,7 +373,7 @@ public class HomeFragment extends Fragment {
             item = item.replace("{", "").replace("}", "");
             String key = extractValue(item, "Id");
             String name = extractValue(item, "NavigationKey");
-            tabList.add(new HomeFragment.TabBean(key, name));
+            tabList.add(new TabBean(key, name));
         }
     }
 
@@ -332,7 +400,7 @@ public class HomeFragment extends Fragment {
                 int id = categoryObj.getInt("Id");
                 String typeName = categoryObj.getString("TypeName");
                 String typeImage = categoryObj.getString("TypeImage");
-                categoryList.add(new HomeFragment.CategoryBean(id, typeName, typeImage));
+                categoryList.add(new CategoryBean(id, typeName, typeImage));
             }
         }
     }
@@ -340,8 +408,8 @@ public class HomeFragment extends Fragment {
     /**
      * 解析商品列表数据（适配你的API格式：GoodsAvatar/GoodsName/GoodsWallet/Id）
      */
-    private List<HomeFragment.GoodsBean> parseGoodsData(String json) throws Exception {
-        List<HomeFragment.GoodsBean> list = new ArrayList<>();
+    private List<GoodsBean> parseGoodsData(String json) throws Exception {
+        List<GoodsBean> list = new ArrayList<>();
         JSONObject rootObj = new JSONObject(json);
 
         // 校验返回码
@@ -358,7 +426,7 @@ public class HomeFragment extends Fragment {
                 String goodsContent = goodsObj.optString("GoodsContent", ""); // 商品描述（可选）
 
                 // 添加到商品列表
-                list.add(new HomeFragment.GoodsBean(id, goodsName, goodsAvatar, goodsWallet, goodsContent));
+                list.add(new GoodsBean(id, goodsName, goodsAvatar, goodsWallet, goodsContent));
             }
         }
         return list;
@@ -371,7 +439,7 @@ public class HomeFragment extends Fragment {
     private void addTabsToLayout() {
         llTabContainer.removeAllViews();
         for (int i = 0; i < tabList.size(); i++) {
-            HomeFragment.TabBean tab = tabList.get(i);
+            TabBean tab = tabList.get(i);
             TextView tvTab = new TextView(getActivity());
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -417,7 +485,7 @@ public class HomeFragment extends Fragment {
         llCategoryContainer.removeAllViews();
         selectedCategoryItem = null; // 重置选中状态
 
-        for (HomeFragment.CategoryBean category : categoryList) {
+        for (CategoryBean category : categoryList) {
             LinearLayout categoryItem = new LinearLayout(getActivity());
             LinearLayout.LayoutParams itemParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -435,7 +503,7 @@ public class HomeFragment extends Fragment {
             LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(144, 144);
             ivIcon.setLayoutParams(iconParams);
             ivIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-//            ivIcon.setImageResource(R.mipmap.ic_launcher);
+            // ivIcon.setImageResource(R.mipmap.ic_launcher);
             loadImage(category.getTypeImage(), ivIcon);
 
             // 分类文字
@@ -469,7 +537,7 @@ public class HomeFragment extends Fragment {
                 currentPage = 1;
                 getGoodsListFromApi(currentTypesId, currentPage, true);
 
-//                Toast.makeText(getActivity(), "切换分类：" + category.getTypeName() + "，typesId=" + currentTypesId, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getActivity(), "切换分类：" + category.getTypeName() + "，typesId=" + currentTypesId, Toast.LENGTH_SHORT).show();
             });
 
             // 默认选中第一个分类（typesId=1）
@@ -489,16 +557,16 @@ public class HomeFragment extends Fragment {
     private void loadImage(String imageUrl, ImageView imageView) {
         new Thread(() -> {
             try {
-                java.net.URL url = new java.net.URL(imageUrl);
-                java.io.InputStream is = url.openStream();
-                android.graphics.Bitmap bitmap = android.graphics.BitmapFactory.decodeStream(is);
-                getActivity().runOnUiThread(() -> imageView.setImageBitmap(bitmap));
+                URL url = new URL(imageUrl);
+                InputStream is = url.openStream();
+                Bitmap bitmap = BitmapFactory.decodeStream(is);
+                mainHandler.post(() -> imageView.setImageBitmap(bitmap));
                 is.close();
             } catch (Exception e) {
                 e.printStackTrace();
-                getActivity().runOnUiThread(() -> {
+                mainHandler.post(() -> {
                     // 图片加载失败时显示默认图
-//                    imageView.setImageResource(R.mipmap.ic_launcher);
+                    // imageView.setImageResource(R.mipmap.ic_launcher);
                     Toast.makeText(getActivity(), "图片加载失败", Toast.LENGTH_SHORT).show();
                 });
             }
@@ -567,24 +635,24 @@ public class HomeFragment extends Fragment {
     }
 
     // -------------------------- 商品列表适配器 --------------------------
-    private class GoodsAdapter extends RecyclerView.Adapter<HomeFragment.GoodsAdapter.GoodsViewHolder> {
-        private List<HomeFragment.GoodsBean> mGoodsList;
+    private class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.GoodsViewHolder> {
+        private List<GoodsBean> mGoodsList;
 
-        public GoodsAdapter(List<HomeFragment.GoodsBean> goodsList) {
+        public GoodsAdapter(List<GoodsBean> goodsList) {
             this.mGoodsList = goodsList;
         }
 
         @NonNull
         @Override
-        public HomeFragment.GoodsAdapter.GoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public GoodsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             // 加载商品项布局
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_goods, parent, false);
-            return new HomeFragment.GoodsAdapter.GoodsViewHolder(view);
+            return new GoodsViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull HomeFragment.GoodsAdapter.GoodsViewHolder holder, int position) {
-            HomeFragment.GoodsBean goods = mGoodsList.get(position);
+        public void onBindViewHolder(@NonNull GoodsViewHolder holder, int position) {
+            GoodsBean goods = mGoodsList.get(position);
 
             // 加载中提示项
             if (goods.getId() == -1) {
@@ -604,7 +672,20 @@ public class HomeFragment extends Fragment {
 
             // 商品点击事件（可选：可跳转到商品详情页）
             holder.itemView.setOnClickListener(v -> {
-//                Toast.makeText(getActivity(), "点击商品：" + goods.getGoodsName() + "，ID：" + goods.getId(), Toast.LENGTH_SHORT).show();
+                if (getActivity() == null) return;
+
+                // 1. 构建Intent，跳转到DetailsActivity
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+
+                // 2. 传递商品数据（根据需求传递，示例传递核心字段）
+                intent.putExtra("goods_id", goods.getId());
+                intent.putExtra("goods_name", goods.getGoodsName());
+                intent.putExtra("goods_image", goods.getGoodsImage());
+                intent.putExtra("goods_price", goods.getPrice());
+                intent.putExtra("goods_description", goods.getDescription());
+
+                // 3. 启动详情页
+                getActivity().startActivity(intent);
             });
         }
 
@@ -626,6 +707,16 @@ public class HomeFragment extends Fragment {
                 tvName = itemView.findViewById(R.id.tv_goods_name);
                 tvPrice = itemView.findViewById(R.id.tv_goods_price);
             }
+        }
+    }
+
+    // -------------------------- 生命周期 --------------------------
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // 取消所有未完成的请求
+        if (okHttpClient != null) {
+            okHttpClient.dispatcher().cancelAll();
         }
     }
 }

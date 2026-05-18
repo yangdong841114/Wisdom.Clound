@@ -1,513 +1,521 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <!-- 顶部用户信息栏（背景渐变/纯色） -->
-    <RelativeLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="#dd524d">
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        android:orientation="vertical">
 
-        <!-- 头像 -->
-        <ImageView
-            android:id="@+id/iv_avatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/shape_avatar_border"
-            android:padding="2dp"
-            android:src="@drawable/ic_avatar" />
+        <!-- 顶部用户信息栏（背景渐变/纯色） -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="#dd524d">
 
-        <!-- 昵称 + 会员标签 -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/iv_avatar"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical">
+            <!-- 头像 -->
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/shape_avatar_border"
+                android:padding="2dp"
+                android:src="@drawable/ic_avatar" />
 
-            <TextView
-                android:id="@+id/tv_userName"
+            <!-- 昵称 + 会员标签 -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="立即登录"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/iv_avatar"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_grade"
+                <TextView
+                    android:id="@+id/tv_userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即登录"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_goods_bg"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="普通会员"
+                    android:textColor="#DCAA51"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- 累计省钱 -->
+            <!--        <TextView-->
+            <!--            android:id="@+id/tv_total"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_below="@id/iv_avatar"-->
+            <!--            android:layout_marginLeft="20dp"-->
+            <!--            android:layout_marginTop="10dp"-->
+            <!--            android:text="累计收益16元"-->
+            <!--            android:textColor="#FFFFFF"-->
+            <!--            android:textSize="20sp" />-->
+
+            <!-- 右侧功能图标（地址/客服/设置） -->
+
+            <!-- 会员中心 + 省钱卡 -->
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="65dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/shape_goods_bg"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:text="普通会员"
-                android:textColor="#DCAA51"
-                android:textSize="14sp" />
-        </LinearLayout>
+                android:padding="8dp"
+                android:orientation="horizontal">
 
-        <!-- 累计省钱 -->
-<!--        <TextView-->
-<!--            android:id="@+id/tv_total"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/iv_avatar"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:text="累计收益16元"-->
-<!--            android:textColor="#FFFFFF"-->
-<!--            android:textSize="20sp" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邀请码"
+                    android:textColor="#DCAA51"
+                    android:textSize="14sp" />
 
-        <!-- 右侧功能图标（地址/客服/设置） -->
+                <TextView
+                    android:id="@+id/tv_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_main_bg"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:padding="5dp"
+                    android:text="000000"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
 
-        <!-- 会员中心 + 省钱卡 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#f5f5f5"
+            android:layout_marginTop="10dp"
+            >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="65dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/shape_goods_bg"
-            android:padding="8dp"
-            android:orientation="horizontal">
+            <!-- 第一行：金币、推荐、分红池 -->
+            <!-- 第一列第一行：金币 -->
+            <LinearLayout
+                android:id="@+id/item_status"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintWidth_percent="0.24"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="邀请码"
-                android:textColor="#DCAA51"
-                android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_user_status" />
 
-            <TextView
-                android:id="@+id/tv_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/shape_main_bg"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:padding="5dp"
-                android:text="026787"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="激活状态"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#f5f5f5"
-        android:layout_marginTop="10dp"
-        >
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未激活"
+                    android:textSize="14sp"
+                    android:textColor="#ff6600"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
 
-        <!-- 第一行：金币、推荐、分红池 -->
-        <!-- 第一列第一行：金币 -->
-        <LinearLayout
-            android:id="@+id/item_status"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            android:layout_marginLeft="5dp"
-            app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第二列第一行：推荐 -->
+            <LinearLayout
+                android:id="@+id/item_fee"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.24"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintStart_toEndOf="@id/item_status"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_user_fee" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="激活状态"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团队比例"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100"
-                android:textSize="18sp"
-                android:textColor="#ff6600"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="14sp"
+                    android:textColor="#ff6600"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
 
-        <!-- 第二列第一行：推荐 -->
-        <LinearLayout
-            android:id="@+id/item_fee"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_status"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第三列第一行：分红池 -->
+            <LinearLayout
+                android:id="@+id/item_wallet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginLeft="4dp"
+                app:layout_constraintWidth_percent="0.24"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintStart_toEndOf="@id/item_fee"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_user_wallet" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="收益比例"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户余额"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-            <TextView
-                android:id="@+id/tv_fee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100"
-                android:textSize="18sp"
-                android:textColor="#ff6600"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥0元"
+                    android:textSize="14sp"
+                    android:textColor="#ff6600"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
 
-        <!-- 第三列第一行：分红池 -->
-        <LinearLayout
-            android:id="@+id/item_wallet"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginLeft="4dp"
-            app:layout_constraintWidth_percent="0.24"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_fee"
-            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:id="@+id/item_points"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginLeft="4dp"
+                app:layout_constraintWidth_percent="0.23"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintStart_toEndOf="@id/item_wallet"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_user_points" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账户余额"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户积分"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-            <TextView
-                android:id="@+id/tv_wallet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100"
-                android:textSize="18sp"
-                android:textColor="#ff6600"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="14sp"
+                    android:textColor="#ff6600"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/item_points"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginLeft="4dp"
-            app:layout_constraintWidth_percent="0.23"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_wallet"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第二行：积分、开始任务、奖金池 -->
+            <!-- 第一列第二行：积分 -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dp"
+            android:background="#f5f5f5"
+            android:padding="5dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账户积分"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+            <LinearLayout
+                android:id="@+id/item_start_task"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_start_task_btn"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintHeight_percent="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_points"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100"
-                android:textSize="18sp"
-                android:textColor="#ff6600"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开始任务"
+                    android:textSize="26sp"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
 
-        <!-- 第二行：积分、开始任务、奖金池 -->
-        <!-- 第一列第二行：积分 -->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="3dp"
-        android:background="#f5f5f5"
-        android:padding="5dp">
+        <!-- 九宫格布局（替换原日历控件） -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#f5f5f5"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
 
-        <LinearLayout
-            android:id="@+id/item_start_task"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/shape_start_task_btn"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="1"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第一行：金币、推荐、分红池 -->
+            <!-- 第一列第一行：金币 -->
+            <LinearLayout
+                android:id="@+id/item_userInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded_left_top"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.95"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="开始任务"
-                android:textSize="26sp"
-                android:textColor="#ffffff"/>
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_user" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个人信息"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-    <!-- 九宫格布局（替换原日历控件） -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#f5f5f5"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp">
+            </LinearLayout>
 
-        <!-- 第一行：金币、推荐、分红池 -->
-        <!-- 第一列第一行：金币 -->
-        <LinearLayout
-            android:id="@+id/item_userInfo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded_left_top"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第二列第一行：推荐 -->
+            <LinearLayout
+                android:id="@+id/item_walletInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.95"
+                app:layout_constraintStart_toEndOf="@id/item_userInfo"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_wallet" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="个人信息"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户信息"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <!-- 第二列第一行：推荐 -->
-        <LinearLayout
-            android:id="@+id/item_walletInfo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_userInfo"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第三列第一行：分红池 -->
+            <LinearLayout
+                android:id="@+id/item_orderInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded_right_top"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.95"
+                app:layout_constraintStart_toEndOf="@id/item_walletInfo"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_order" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账户信息"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="订单信息"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <!-- 第三列第一行：分红池 -->
-        <LinearLayout
-            android:id="@+id/item_orderInfo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded_right_top"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_walletInfo"
-            app:layout_constraintTop_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#f5f5f5"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="订单信息"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+            <!-- 第一行：金币、推荐、分红池 -->
+            <!-- 第一列第一行：金币 -->
+            <LinearLayout
+                android:id="@+id/item_teamInfo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded_left_bottom"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_team" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="团队信息"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#f5f5f5"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp">
+            </LinearLayout>
 
-        <!-- 第一行：金币、推荐、分红池 -->
-        <!-- 第一列第一行：金币 -->
-        <LinearLayout
-            android:id="@+id/item_teamInfo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded_left_bottom"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第二列第一行：推荐 -->
+            <LinearLayout
+                android:id="@+id/item_total"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.9"
+                app:layout_constraintStart_toEndOf="@id/item_teamInfo"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_total" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="团队信息"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="奖池信息"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <!-- 第二列第一行：推荐 -->
-        <LinearLayout
-            android:id="@+id/item_total"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_teamInfo"
-            app:layout_constraintTop_toTopOf="parent">
+            <!-- 第三列第一行：分红池 -->
+            <LinearLayout
+                android:id="@+id/item_exit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_rounded_right_bottom"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintWidth_percent="0.32"
+                app:layout_constraintHeight_percent="0.9"
+                app:layout_constraintStart_toEndOf="@id/item_total"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_avatar_border"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_item_exit" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="奖池信息"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退出"
+                    android:textSize="16sp"
+                    android:textColor="#333333"/>
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <!-- 第三列第一行：分红池 -->
-        <LinearLayout
-            android:id="@+id/item_system"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/bg_rounded_right_bottom"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp"
-            app:layout_constraintWidth_percent="0.32"
-            app:layout_constraintHeight_percent="1"
-            app:layout_constraintStart_toEndOf="@id/item_total"
-            app:layout_constraintTop_toTopOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/shape_avatar_border"
-                android:padding="2dp"
-                android:src="@drawable/ic_avatar" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="系统设置"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

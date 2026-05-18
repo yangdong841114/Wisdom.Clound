@@ -41,4 +41,9 @@ dependencies {
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
     implementation libs.swiperefreshlayout
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+    implementation libs.gson
+    implementation libs.glide
+    annotationProcessor libs.compiler
 }
