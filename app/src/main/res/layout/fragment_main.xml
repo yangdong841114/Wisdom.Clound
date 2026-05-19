@@ -342,7 +342,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="个人信息"
+                    android:text="账户"
                     android:textSize="16sp"
                     android:textColor="#333333"/>
 
@@ -373,7 +373,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="账户信息"
+                    android:text="钱包"
                     android:textSize="16sp"
                     android:textColor="#333333"/>
 
@@ -404,7 +404,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="订单信息"
+                    android:text="订单"
                     android:textSize="16sp"
                     android:textColor="#333333"/>
 
@@ -446,7 +446,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="团队信息"
+                    android:text="分享"
                     android:textSize="16sp"
                     android:textColor="#333333"/>
 
@@ -477,7 +477,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="奖池信息"
+                    android:text="消息"
                     android:textSize="16sp"
                     android:textColor="#333333"/>
 

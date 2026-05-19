@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="个人信息管理"
+            android:text="修改密码"
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -42,32 +42,6 @@
             android:orientation="vertical"
             android:spacing="15dp">
 
-            <!-- 头像区域（居中显示） -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <ImageView
-                    android:id="@+id/iv_avatar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_avatar" />
-
-                <TextView
-                    android:id="@+id/tv_change_avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="更换头像"
-                    android:textColor="#0088ff"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
             <!-- 昵称区域 -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,18 +58,20 @@
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:text="账号："
+                        android:text="原密码："
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/et_edit_account"
+                        android:id="@+id/et_old_pwd"
+                        android:inputType="textPassword"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:background="#ffffff"
                         android:paddingLeft="10dp"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:hint="请输入原密码"/>
 
                 </LinearLayout>
 
@@ -117,18 +93,55 @@
                     <TextView
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:text="昵称："
+                        android:text="新密码："
                         android:textColor="#333333"
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/et_edit_nickname"
+                        android:id="@+id/et_new_pwd"
+                        android:inputType="textPassword"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
                         android:background="#ffffff"
                         android:paddingLeft="10dp"
+                        android:textSize="16sp"
+                        android:hint="请输入新密码"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 昵称区域 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="确认密码："
+                        android:textColor="#333333"
                         android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/et_confirm_pwd"
+                        android:inputType="textPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:paddingLeft="10dp"
+                        android:textSize="16sp"
+                        android:hint="请确认新密码"/>
 
                 </LinearLayout>
 
@@ -147,7 +160,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="保存"
+                    android:text="修改"
                     android:textSize="26sp"
                     android:textColor="#ffffff"/>
             </LinearLayout>

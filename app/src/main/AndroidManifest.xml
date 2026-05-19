@@ -37,6 +37,15 @@
         <activity
             android:name="com.wisdom.clound.user.UserInfoActivity"
             android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.user.UserPwdActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.user.UserAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.wisdom.clound.user.UserPayPwdActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

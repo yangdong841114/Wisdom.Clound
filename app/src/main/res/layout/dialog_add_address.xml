@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+    <!-- 顶部关闭按钮 + 标题 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="添加收货地址"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_dialog_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:backgroundTint="#F5F5F5"
+            android:background="@drawable/ic_exit"
+            android:textSize="18sp"
+            android:textColor="#666666"/>
+    </RelativeLayout>
+
+    <!-- 收货人姓名 -->
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入收货人姓名"
+        android:paddingHorizontal="12dp"
+        android:background="@drawable/shape_edittext_bg"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 收货人电话 -->
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入收货人电话"
+        android:inputType="phone"
+        android:paddingHorizontal="12dp"
+        android:background="@drawable/shape_edittext_bg"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 省市区三级联动（核心修改） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Spinner
+            android:id="@+id/sp_province"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_bg"
+            android:paddingHorizontal="12dp"
+            android:entries="@array/province_list"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"/>
+
+        <Spinner
+            android:id="@+id/sp_city"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_bg"
+            android:paddingHorizontal="12dp"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"/>
+
+        <Spinner
+            android:id="@+id/sp_district"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edittext_bg"
+            android:paddingHorizontal="12dp"/>
+    </LinearLayout>
+
+    <!-- 详细收货地址 -->
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="请输入详细收货地址（街道/小区/门牌号）"
+        android:gravity="top"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/shape_edittext_bg"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 保存按钮 -->
+    <Button
+        android:id="@+id/btn_save_address"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="保存地址"
+        android:textSize="16sp"
+        android:backgroundTint="#409EFF"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

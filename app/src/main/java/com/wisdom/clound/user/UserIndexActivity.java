@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -71,15 +72,18 @@ public class UserIndexActivity extends AppCompatActivity implements View.OnClick
              startActivity(intent);
         } else if (id == R.id.ll_pwd_manage) {
             // 密码管理
-            Toast.makeText(this, "点击了密码管理", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, UserPwdActivity.class);
+            startActivity(intent);
             // 此处可添加跳转至密码管理页面的逻辑
         } else if (id == R.id.ll_pay_pwd_manage) {
-            // 支付密码管理
-            Toast.makeText(this, "点击了支付密码管理", Toast.LENGTH_SHORT).show();
+            // 密码管理
+            Intent intent = new Intent(this, UserPayPwdActivity.class);
+            startActivity(intent);
             // 此处可添加跳转至支付密码管理页面的逻辑
         } else if (id == R.id.ll_address_manage) {
             // 地址管理
-            Toast.makeText(this, "点击了地址管理", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, UserAddressActivity.class);
+            startActivity(intent);
             // 此处可添加跳转至地址管理页面的逻辑
         }
     }

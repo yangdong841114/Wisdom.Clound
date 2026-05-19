@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="8dp"
+    android:backgroundTint="#F5F5F5"
+    app:justifyContent="space_between"
+    app:flexDirection="row">
+
+    <!-- 默认地址标签 -->
+    <TextView
+        android:id="@+id/tv_default_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="默认地址"
+        android:textColor="#FFFFFF"
+        android:background="#FF5722"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="2dp"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+    <!-- 姓名+电话 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:justifyContent="space_between"
+        app:flexDirection="row">
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月清璃"
+            android:textSize="16sp"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:id="@+id/tv_user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13322225533"
+            android:textSize="16sp"
+            android:textColor="#333333"/>
+    </LinearLayout>
+
+    <!-- 地址信息 -->
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="北京北京市东城区 智学苑1-1-1021"
+        android:textSize="14sp"
+        android:textColor="#666666"/>
+
+    <!-- 操作按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="修改"
+            android:textSize="14sp"
+            android:backgroundTint="#409EFF"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:text="删除"
+            android:textSize="14sp"
+            android:backgroundTint="#F56C6C"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:background="#eeeeee"
+        android:layout_marginLeft="15dp"/>
+
+</LinearLayout>

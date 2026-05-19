@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ******************** 省份/直辖市/自治区/特别行政区 列表 ******************** -->
+    <string-array name="province_list">
+        <item>请选择省份</item>
+        <!-- 直辖市 -->
+        <item>北京市</item>
+        <item>上海市</item>
+        <item>天津市</item>
+        <item>重庆市</item>
+        <!-- 省 -->
+        <item>河北省</item>
+        <item>山西省</item>
+        <item>辽宁省</item>
+        <item>吉林省</item>
+        <item>黑龙江省</item>
+        <item>江苏省</item>
+        <item>浙江省</item>
+        <item>安徽省</item>
+        <item>福建省</item>
+        <item>江西省</item>
+        <item>山东省</item>
+        <item>河南省</item>
+        <item>湖北省</item>
+        <item>湖南省</item>
+        <item>广东省</item>
+        <item>海南省</item>
+        <item>四川省</item>
+        <item>贵州省</item>
+        <item>云南省</item>
+        <item>陕西省</item>
+        <item>甘肃省</item>
+        <item>青海省</item>
+        <item>台湾省</item>
+        <!-- 自治区 -->
+        <item>内蒙古自治区</item>
+        <item>广西壮族自治区</item>
+        <item>西藏自治区</item>
+        <item>宁夏回族自治区</item>
+        <item>新疆维吾尔自治区</item>
+        <!-- 特别行政区 -->
+        <item>香港特别行政区</item>
+        <item>澳门特别行政区</item>
+    </string-array>
+
+    <!-- ******************** 直辖市 ******************** -->
+    <!-- 北京市 - 市/区 -->
+    <string-array name="city_beijing">
+        <item>请选择城市</item>
+        <item>北京市</item>
+    </string-array>
+    <string-array name="district_beijing">
+        <item>请选择区域</item>
+        <item>东城区</item>
+        <item>西城区</item>
+        <item>朝阳区</item>
+        <item>海淀区</item>
+        <item>丰台区</item>
+        <item>石景山区</item>
+        <item>通州区</item>
+        <item>顺义区</item>
+        <item>昌平区</item>
+        <item>大兴区</item>
+        <item>房山区</item>
+        <item>门头沟区</item>
+        <item>怀柔区</item>
+        <item>平谷区</item>
+        <item>密云区</item>
+        <item>延庆区</item>
+    </string-array>
+
+    <!-- 上海市 - 市/区 -->
+    <string-array name="city_shanghai">
+        <item>请选择城市</item>
+        <item>上海市</item>
+    </string-array>
+    <string-array name="district_shanghai">
+        <item>请选择区域</item>
+        <item>黄浦区</item>
+        <item>徐汇区</item>
+        <item>静安区</item>
+        <item>长宁区</item>
+        <item>普陀区</item>
+        <item>虹口区</item>
+        <item>杨浦区</item>
+        <item>浦东新区</item>
+        <item>闵行区</item>
+        <item>宝山区</item>
+        <item>嘉定区</item>
+        <item>金山区</item>
+        <item>松江区</item>
+        <item>青浦区</item>
+        <item>奉贤区</item>
+        <item>崇明区</item>
+    </string-array>
+
+    <!-- 天津市 - 市/区 -->
+    <string-array name="city_tianjin">
+        <item>请选择城市</item>
+        <item>天津市</item>
+    </string-array>
+    <string-array name="district_tianjin">
+        <item>请选择区域</item>
+        <item>和平区</item>
+        <item>河东区</item>
+        <item>河西区</item>
+        <item>南开区</item>
+        <item>河北区</item>
+        <item>红桥区</item>
+        <item>东丽区</item>
+        <item>西青区</item>
+        <item>津南区</item>
+        <item>北辰区</item>
+        <item>武清区</item>
+        <item>宝坻区</item>
+        <item>滨海新区</item>
+        <item>宁河区</item>
+        <item>静海区</item>
+        <item>蓟州区</item>
+    </string-array>
+
+    <!-- 重庆市 - 市/区/县 -->
+    <string-array name="city_chongqing">
+        <item>请选择城市</item>
+        <item>重庆市</item>
+    </string-array>
+    <string-array name="district_chongqing">
+        <item>请选择区域</item>
+        <item>渝中区</item>
+        <item>江北区</item>
+        <item>沙坪坝区</item>
+        <item>九龙坡区</item>
+        <item>南岸区</item>
+        <item>北碚区</item>
+        <item>渝北区</item>
+        <item>巴南区</item>
+        <item>万州区</item>
+        <item>涪陵区</item>
+        <item>永川区</item>
+        <item>璧山区</item>
+        <item>大足区</item>
+        <item>綦江区</item>
+        <item>江津区</item>
+        <item>合川区</item>
+        <item>黔江区</item>
+        <item>长寿区</item>
+        <item>南川区</item>
+        <item>铜梁区</item>
+        <item>潼南区</item>
+        <item>荣昌区</item>
+        <item>开州区</item>
+        <item>梁平区</item>
+        <item>武隆区</item>
+        <item>城口县</item>
+        <item>丰都县</item>
+        <item>垫江县</item>
+        <item>忠县</item>
+        <item>云阳县</item>
+        <item>奉节县</item>
+        <item>巫山县</item>
+        <item>巫溪县</item>
+        <item>石柱土家族自治县</item>
+        <item>秀山土家族苗族自治县</item>
+        <item>酉阳土家族苗族自治县</item>
+        <item>彭水苗族土家族自治县</item>
+    </string-array>
+
+    <!-- ******************** 河北省 ******************** -->
+    <string-array name="city_hebei">
+        <item>请选择城市</item>
+        <item>石家庄市</item>
+        <item>唐山市</item>
+        <item>秦皇岛市</item>
+        <item>邯郸市</item>
+        <item>邢台市</item>
+        <item>保定市</item>
+        <item>张家口市</item>
+        <item>承德市</item>
+        <item>沧州市</item>
+        <item>廊坊市</item>
+        <item>衡水市</item>
+    </string-array>
+    <!-- 石家庄市-区/县 -->
+    <string-array name="district_shijiazhuang">
+        <item>请选择区域</item>
+        <item>长安区</item>
+        <item>桥西区</item>
+        <item>新华区</item>
+        <item>井陉矿区</item>
+        <item>裕华区</item>
+        <item>藁城区</item>
+        <item>鹿泉区</item>
+        <item>栾城区</item>
+        <item>井陉县</item>
+        <item>正定县</item>
+        <item>晋州市</item>
+        <item>新乐市</item>
+    </string-array>
+    <!-- 唐山市-区/县 -->
+    <string-array name="district_tangshan">
+        <item>请选择区域</item>
+        <item>路南区</item>
+        <item>路北区</item>
+        <item>古冶区</item>
+        <item>开平区</item>
+        <item>丰南区</item>
+        <item>丰润区</item>
+        <item>曹妃甸区</item>
+        <item>遵化市</item>
+        <item>迁安市</item>
+    </string-array>
+
+    <!-- ******************** 山西省 ******************** -->
+    <string-array name="city_shanxi">
+        <item>请选择城市</item>
+        <item>太原市</item>
+        <item>大同市</item>
+        <item>阳泉市</item>
+        <item>长治市</item>
+        <item>晋城市</item>
+        <item>朔州市</item>
+        <item>晋中市</item>
+        <item>运城市</item>
+        <item>忻州市</item>
+        <item>临汾市</item>
+        <item>吕梁市</item>
+    </string-array>
+    <!-- 太原市-区/县 -->
+    <string-array name="district_taiyuan">
+        <item>请选择区域</item>
+        <item>小店区</item>
+        <item>迎泽区</item>
+        <item>杏花岭区</item>
+        <item>尖草坪区</item>
+        <item>万柏林区</item>
+        <item>晋源区</item>
+        <item>清徐县</item>
+        <item>阳曲县</item>
+        <item>古交市</item>
+    </string-array>
+
+    <!-- ******************** 辽宁省 ******************** -->
+    <string-array name="city_liaoning">
+        <item>请选择城市</item>
+        <item>沈阳市</item>
+        <item>大连市</item>
+        <item>鞍山市</item>
+        <item>抚顺市</item>
+        <item>本溪市</item>
+        <item>丹东市</item>
+        <item>锦州市</item>
+        <item>营口市</item>
+        <item>阜新市</item>
+        <item>辽阳市</item>
+        <item>盘锦市</item>
+        <item>铁岭市</item>
+        <item>朝阳市</item>
+        <item>葫芦岛市</item>
+    </string-array>
+    <!-- 沈阳市-区/县 -->
+    <string-array name="district_shenyang">
+        <item>请选择区域</item>
+        <item>和平区</item>
+        <item>沈河区</item>
+        <item>大东区</item>
+        <item>皇姑区</item>
+        <item>铁西区</item>
+        <item>苏家屯区</item>
+        <item>浑南区</item>
+        <item>沈北新区</item>
+        <item>于洪区</item>
+        <item>辽中区</item>
+        <item>新民市</item>
+    </string-array>
+    <!-- 大连市-区/县 -->
+    <string-array name="district_dalian">
+        <item>请选择区域</item>
+        <item>中山区</item>
+        <item>西岗区</item>
+        <item>沙河口区</item>
+        <item>甘井子区</item>
+        <item>旅顺口区</item>
+        <item>金州区</item>
+        <item>普兰店区</item>
+        <item>瓦房店市</item>
+        <item>庄河市</item>
+    </string-array>
+
+    <!-- ******************** 吉林省 ******************** -->
+    <string-array name="city_jilin">
+        <item>请选择城市</item>
+        <item>长春市</item>
+        <item>吉林市</item>
+        <item>四平市</item>
+        <item>辽源市</item>
+        <item>通化市</item>
+        <item>白山市</item>
+        <item>松原市</item>
+        <item>白城市</item>
+        <item>延边朝鲜族自治州</item>
+    </string-array>
+    <!-- 长春市-区/县 -->
+    <string-array name="district_changchun">
+        <item>请选择区域</item>
+        <item>南关区</item>
+        <item>宽城区</item>
+        <item>朝阳区</item>
+        <item>二道区</item>
+        <item>绿园区</item>
+        <item>双阳区</item>
+        <item>九台区</item>
+        <item>榆树市</item>
+        <item>德惠市</item>
+    </string-array>
+
+    <!-- ******************** 黑龙江省 ******************** -->
+    <string-array name="city_heilongjiang">
+        <item>请选择城市</item>
+        <item>哈尔滨市</item>
+        <item>齐齐哈尔市</item>
+        <item>鸡西市</item>
+        <item>鹤岗市</item>
+        <item>双鸭山市</item>
+        <item>大庆市</item>
+        <item>伊春市</item>
+        <item>佳木斯市</item>
+        <item>七台河市</item>
+        <item>牡丹江市</item>
+        <item>黑河市</item>
+        <item>绥化市</item>
+        <item>大兴安岭地区</item>
+    </string-array>
+    <!-- 哈尔滨市-区/县 -->
+    <string-array name="district_harbin">
+        <item>请选择区域</item>
+        <item>道里区</item>
+        <item>南岗区</item>
+        <item>道外区</item>
+        <item>平房区</item>
+        <item>松北区</item>
+        <item>香坊区</item>
+        <item>呼兰区</item>
+        <item>阿城区</item>
+        <item>双城区</item>
+        <item>五常市</item>
+        <item>尚志市</item>
+    </string-array>
+
+    <!-- ******************** 江苏省 ******************** -->
+    <string-array name="city_jiangsu">
+        <item>请选择城市</item>
+        <item>南京市</item>
+        <item>无锡市</item>
+        <item>徐州市</item>
+        <item>常州市</item>
+        <item>苏州市</item>
+        <item>南通市</item>
+        <item>连云港市</item>
+        <item>淮安市</item>
+        <item>盐城市</item>
+        <item>扬州市</item>
+        <item>镇江市</item>
+        <item>泰州市</item>
+        <item>宿迁市</item>
+    </string-array>
+    <!-- 南京市-区 -->
+    <string-array name="district_nanjing">
+        <item>请选择区域</item>
+        <item>玄武区</item>
+        <item>秦淮区</item>
+        <item>建邺区</item>
+        <item>鼓楼区</item>
+        <item>浦口区</item>
+        <item>栖霞区</item>
+        <item>雨花台区</item>
+        <item>江宁区</item>
+        <item>六合区</item>
+        <item>溧水区</item>
+        <item>高淳区</item>
+    </string-array>
+    <!-- 苏州市-区/县级市 -->
+    <string-array name="district_suzhou">
+        <item>请选择区域</item>
+        <item>姑苏区</item>
+        <item>吴中区</item>
+        <item>相城区</item>
+        <item>虎丘区</item>
+        <item>吴江区</item>
+        <item>常熟市</item>
+        <item>张家港市</item>
+        <item>昆山市</item>
+        <item>太仓市</item>
+    </string-array>
+    <!-- 无锡市-区/县级市 -->
+    <string-array name="district_wuxi">
+        <item>请选择区域</item>
+        <item>梁溪区</item>
+        <item>锡山区</item>
+        <item>惠山区</item>
+        <item>滨湖区</item>
+        <item>新吴区</item>
+        <item>江阴市</item>
+        <item>宜兴市</item>
+    </string-array>
+
+    <!-- ******************** 浙江省 ******************** -->
+    <string-array name="city_zhejiang">
+        <item>请选择城市</item>
+        <item>杭州市</item>
+        <item>宁波市</item>
+        <item>温州市</item>
+        <item>嘉兴市</item>
+        <item>湖州市</item>
+        <item>绍兴市</item>
+        <item>金华市</item>
+        <item>衢州市</item>
+        <item>舟山市</item>
+        <item>台州市</item>
+        <item>丽水市</item>
+    </string-array>
+    <!-- 杭州市-区/县级市 -->
+    <string-array name="district_hangzhou">
+        <item>请选择区域</item>
+        <item>上城区</item>
+        <item>拱墅区</item>
+        <item>西湖区</item>
+        <item>滨江区</item>
+        <item>萧山区</item>
+        <item>余杭区</item>
+        <item>富阳区</item>
+        <item>临安区</item>
+        <item>临平区</item>
+        <item>钱塘区</item>
+        <item>建德市</item>
+    </string-array>
+    <!-- 宁波市-区/县级市 -->
+    <string-array name="district_ningbo">
+        <item>请选择区域</item>
+        <item>海曙区</item>
+        <item>江北区</item>
+        <item>镇海区</item>
+        <item>北仑区</item>
+        <item>鄞州区</item>
+        <item>奉化区</item>
+        <item>余姚市</item>
+        <item>慈溪市</item>
+        <item>象山县</item>
+    </string-array>
+    <!-- 温州市-区/县级市 -->
+    <string-array name="district_wenzhou">
+        <item>请选择区域</item>
+        <item>鹿城区</item>
+        <item>龙湾区</item>
+        <item>瓯海区</item>
+        <item>洞头区</item>
+        <item>瑞安市</item>
+        <item>乐清市</item>
+        <item>龙港市</item>
+    </string-array>
+
+    <!-- ******************** 安徽省 ******************** -->
+    <string-array name="city_anhui">
+        <item>请选择城市</item>
+        <item>合肥市</item>
+        <item>芜湖市</item>
+        <item>蚌埠市</item>
+        <item>淮南市</item>
+        <item>马鞍山市</item>
+        <item>淮北市</item>
+        <item>铜陵市</item>
+        <item>安庆市</item>
+        <item>黄山市</item>
+        <item>滁州市</item>
+        <item>阜阳市</item>
+        <item>宿州市</item>
+        <item>六安市</item>
+        <item>亳州市</item>
+        <item>池州市</item>
+        <item>宣城市</item>
+    </string-array>
+    <!-- 合肥市-区/县级市 -->
+    <string-array name="district_hefei">
+        <item>请选择区域</item>
+        <item>瑶海区</item>
+        <item>庐阳区</item>
+        <item>蜀山区</item>
+        <item>包河区</item>
+        <item>肥东县</item>
+        <item>肥西县</item>
+        <item>长丰县</item>
+        <item>庐江县</item>
+        <item>巢湖市</item>
+    </string-array>
+
+    <!-- ******************** 福建省 ******************** -->
+    <string-array name="city_fujian">
+        <item>请选择城市</item>
+        <item>福州市</item>
+        <item>厦门市</item>
+        <item>莆田市</item>
+        <item>三明市</item>
+        <item>泉州市</item>
+        <item>漳州市</item>
+        <item>南平市</item>
+        <item>龙岩市</item>
+        <item>宁德市</item>
+    </string-array>
+    <!-- 福州市-区/县级市 -->
+    <string-array name="district_fuzhou">
+        <item>请选择区域</item>
+        <item>鼓楼区</item>
+        <item>台江区</item>
+        <item>仓山区</item>
+        <item>马尾区</item>
+        <item>晋安区</item>
+        <item>长乐区</item>
+        <item>福清市</item>
+    </string-array>
+    <!-- 厦门市-区 -->
+    <string-array name="district_xiamen">
+        <item>请选择区域</item>
+        <item>思明区</item>
+        <item>海沧区</item>
+        <item>湖里区</item>
+        <item>集美区</item>
+        <item>同安区</item>
+        <item>翔安区</item>
+    </string-array>
+
+    <!-- ******************** 江西省 ******************** -->
+    <string-array name="city_jiangxi">
+        <item>请选择城市</item>
+        <item>南昌市</item>
+        <item>景德镇市</item>
+        <item>萍乡市</item>
+        <item>九江市</item>
+        <item>新余市</item>
+        <item>鹰潭市</item>
+        <item>赣州市</item>
+        <item>吉安市</item>
+        <item>宜春市</item>
+        <item>抚州市</item>
+        <item>上饶市</item>
+    </string-array>
+    <!-- 南昌市-区/县级市 -->
+    <string-array name="district_nanchang">
+        <item>请选择区域</item>
+        <item>东湖区</item>
+        <item>西湖区</item>
+        <item>青云谱区</item>
+        <item>青山湖区</item>
+        <item>新建区</item>
+        <item>红谷滩区</item>
+        <item>南昌县</item>
+        <item>进贤县</item>
+        <item>安义县</item>
+    </string-array>
+
+    <!-- ******************** 山东省 ******************** -->
+    <string-array name="city_shandong">
+        <item>请选择城市</item>
+        <item>济南市</item>
+        <item>青岛市</item>
+        <item>淄博市</item>
+        <item>枣庄市</item>
+        <item>东营市</item>
+        <item>烟台市</item>
+        <item>潍坊市</item>
+        <item>济宁市</item>
+        <item>泰安市</item>
+        <item>威海市</item>
+        <item>日照市</item>
+        <item>临沂市</item>
+        <item>德州市</item>
+        <item>聊城市</item>
+        <item>滨州市</item>
+        <item>菏泽市</item>
+    </string-array>
+    <!-- 济南市-区/县级市 -->
+    <string-array name="district_jinan">
+        <item>请选择区域</item>
+        <item>历下区</item>
+        <item>市中区</item>
+        <item>槐荫区</item>
+        <item>天桥区</item>
+        <item>历城区</item>
+        <item>长清区</item>
+        <item>章丘区</item>
+        <item>济阳区</item>
+        <item>莱芜区</item>
+        <item>钢城区</item>
+        <item>平阴县</item>
+        <item>商河县</item>
+    </string-array>
+    <!-- 青岛市-区/县级市 -->
+    <string-array name="district_qingdao">
+        <item>请选择区域</item>
+        <item>市南区</item>
+        <item>市北区</item>
+        <item>黄岛区</item>
+        <item>崂山区</item>
+        <item>李沧区</item>
+        <item>城阳区</item>
+        <item>即墨区</item>
+        <item>胶州市</item>
+        <item>平度市</item>
+        <item>莱西市</item>
+    </string-array>
+
+    <!-- ******************** 河南省 ******************** -->
+    <string-array name="city_henan">
+        <item>请选择城市</item>
+        <item>郑州市</item>
+        <item>开封市</item>
+        <item>洛阳市</item>
+        <item>平顶山市</item>
+        <item>安阳市</item>
+        <item>鹤壁市</item>
+        <item>新乡市</item>
+        <item>焦作市</item>
+        <item>濮阳市</item>
+        <item>许昌市</item>
+        <item>漯河市</item>
+        <item>三门峡市</item>
+        <item>南阳市</item>
+        <item>商丘市</item>
+        <item>信阳市</item>
+        <item>周口市</item>
+        <item>驻马店市</item>
+        <item>济源示范区</item>
+    </string-array>
+    <!-- 郑州市-区/县级市 -->
+    <string-array name="district_zhengzhou">
+        <item>请选择区域</item>
+        <item>中原区</item>
+        <item>二七区</item>
+        <item>管城回族区</item>
+        <item>金水区</item>
+        <item>上街区</item>
+        <item>惠济区</item>
+        <item>中牟县</item>
+        <item>巩义市</item>
+        <item>荥阳市</item>
+        <item>新密市</item>
+        <item>新郑市</item>
+        <item>登封市</item>
+    </string-array>
+
+    <!-- ******************** 湖北省 ******************** -->
+    <string-array name="city_hubei">
+        <item>请选择城市</item>
+        <item>武汉市</item>
+        <item>黄石市</item>
+        <item>十堰市</item>
+        <item>宜昌市</item>
+        <item>襄阳市</item>
+        <item>鄂州市</item>
+        <item>荆门市</item>
+        <item>孝感市</item>
+        <item>荆州市</item>
+        <item>黄冈市</item>
+        <item>咸宁市</item>
+        <item>随州市</item>
+        <item>恩施土家族苗族自治州</item>
+        <item>仙桃市</item>
+        <item>潜江市</item>
+        <item>天门市</item>
+        <item>神农架林区</item>
+    </string-array>
+    <!-- 武汉市-区 -->
+    <string-array name="district_wuhan">
+        <item>请选择区域</item>
+        <item>江岸区</item>
+        <item>江汉区</item>
+        <item>硚口区</item>
+        <item>汉阳区</item>
+        <item>武昌区</item>
+        <item>青山区</item>
+        <item>洪山区</item>
+        <item>东西湖区</item>
+        <item>汉南区</item>
+        <item>蔡甸区</item>
+        <item>江夏区</item>
+        <item>黄陂区</item>
+        <item>新洲区</item>
+    </string-array>
+
+    <!-- ******************** 湖南省 ******************** -->
+    <string-array name="city_hunan">
+        <item>请选择城市</item>
+        <item>长沙市</item>
+        <item>株洲市</item>
+        <item>湘潭市</item>
+        <item>衡阳市</item>
+        <item>邵阳市</item>
+        <item>岳阳市</item>
+        <item>常德市</item>
+        <item>张家界市</item>
+        <item>益阳市</item>
+        <item>郴州市</item>
+        <item>永州市</item>
+        <item>怀化市</item>
+        <item>娄底市</item>
+        <item>湘西土家族苗族自治州</item>
+    </string-array>
+    <!-- 长沙市-区/县级市 -->
+    <string-array name="district_changsha">
+        <item>请选择区域</item>
+        <item>芙蓉区</item>
+        <item>天心区</item>
+        <item>岳麓区</item>
+        <item>开福区</item>
+        <item>雨花区</item>
+        <item>望城区</item>
+        <item>长沙县</item>
+        <item>浏阳市</item>
+        <item>宁乡市</item>
+    </string-array>
+
+    <!-- ******************** 广东省 ******************** -->
+    <string-array name="city_guangdong">
+        <item>请选择城市</item>
+        <item>广州市</item>
+        <item>韶关市</item>
+        <item>深圳市</item>
+        <item>珠海市</item>
+        <item>汕头市</item>
+        <item>佛山市</item>
+        <item>江门市</item>
+        <item>湛江市</item>
+        <item>茂名市</item>
+        <item>肇庆市</item>
+        <item>惠州市</item>
+        <item>梅州市</item>
+        <item>汕尾市</item>
+        <item>河源市</item>
+        <item>阳江市</item>
+        <item>清远市</item>
+        <item>东莞市</item>
+        <item>中山市</item>
+        <item>潮州市</item>
+        <item>揭阳市</item>
+        <item>云浮市</item>
+    </string-array>
+    <!-- 广州市-区 -->
+    <string-array name="district_guangzhou">
+        <item>请选择区域</item>
+        <item>荔湾区</item>
+        <item>越秀区</item>
+        <item>海珠区</item>
+        <item>天河区</item>
+        <item>白云区</item>
+        <item>黄埔区</item>
+        <item>番禺区</item>
+        <item>花都区</item>
+        <item>南沙区</item>
+        <item>从化区</item>
+        <item>增城区</item>
+    </string-array>
+    <!-- 深圳市-区 -->
+    <string-array name="district_shenzhen">
+        <item>请选择区域</item>
+        <item>罗湖区</item>
+        <item>福田区</item>
+        <item>南山区</item>
+        <item>宝安区</item>
+        <item>龙岗区</item>
+        <item>盐田区</item>
+        <item>龙华区</item>
+        <item>坪山区</item>
+        <item>光明区</item>
+        <item>大鹏新区</item>
+    </string-array>
+    <!-- 佛山市-区 -->
+    <string-array name="district_foshan">
+        <item>请选择区域</item>
+        <item>禅城区</item>
+        <item>南海区</item>
+        <item>顺德区</item>
+        <item>三水区</item>
+        <item>高明区</item>
+    </string-array>
+
+    <!-- ******************** 海南省 ******************** -->
+    <string-array name="city_hainan">
+        <item>请选择城市</item>
+        <item>海口市</item>
+        <item>三亚市</item>
+        <item>三沙市</item>
+        <item>儋州市</item>
+        <item>五指山市</item>
+        <item>琼海市</item>
+        <item>文昌市</item>
+        <item>万宁市</item>
+        <item>东方市</item>
+        <item>定安县</item>
+        <item>屯昌县</item>
+        <item>澄迈县</item>
+        <item>临高县</item>
+        <item>白沙黎族自治县</item>
+        <item>昌江黎族自治县</item>
+        <item>乐东黎族自治县</item>
+        <item>陵水黎族自治县</item>
+        <item>保亭黎族苗族自治县</item>
+        <item>琼中黎族苗族自治县</item>
+        <item>洋浦经济开发区</item>
+    </string-array>
+    <!-- 海口市-区 -->
+    <string-array name="district_haikou">
+        <item>请选择区域</item>
+        <item>秀英区</item>
+        <item>龙华区</item>
+        <item>琼山区</item>
+        <item>美兰区</item>
+    </string-array>
+
+    <!-- ******************** 四川省 ******************** -->
+    <string-array name="city_sichuan">
+        <item>请选择城市</item>
+        <item>成都市</item>
+        <item>自贡市</item>
+        <item>攀枝花市</item>
+        <item>泸州市</item>
+        <item>德阳市</item>
+        <item>绵阳市</item>
+        <item>广元市</item>
+        <item>遂宁市</item>
+        <item>内江市</item>
+        <item>乐山市</item>
+        <item>南充市</item>
+        <item>眉山市</item>
+        <item>宜宾市</item>
+        <item>广安市</item>
+        <item>达州市</item>
+        <item>雅安市</item>
+        <item>巴中市</item>
+        <item>资阳市</item>
+        <item>阿坝藏族羌族自治州</item>
+        <item>甘孜藏族自治州</item>
+        <item>凉山彝族自治州</item>
+    </string-array>
+    <!-- 成都市-区/县级市 -->
+    <string-array name="district_chengdu">
+        <item>请选择区域</item>
+        <item>锦江区</item>
+        <item>青羊区</item>
+        <item>金牛区</item>
+        <item>武侯区</item>
+        <item>成华区</item>
+        <item>龙泉驿区</item>
+        <item>青白江区</item>
+        <item>新都区</item>
+        <item>温江区</item>
+        <item>双流区</item>
+        <item>郫都区</item>
+        <item>新津区</item>
+        <item>都江堰市</item>
+        <item>彭州市</item>
+        <item>邛崃市</item>
+        <item>崇州市</item>
+        <item>简阳市</item>
+    </string-array>
+
+    <!-- ******************** 贵州省 ******************** -->
+    <string-array name="city_guizhou">
+        <item>请选择城市</item>
+        <item>贵阳市</item>
+        <item>六盘水市</item>
+        <item>遵义市</item>
+        <item>安顺市</item>
+        <item>毕节市</item>
+        <item>铜仁市</item>
+        <item>黔西南布依族苗族自治州</item>
+        <item>黔东南苗族侗族自治州</item>
+        <item>黔南布依族苗族自治州</item>
+    </string-array>
+    <!-- 贵阳市-区/县级市 -->
+    <string-array name="district_guiyang">
+        <item>请选择区域</item>
+        <item>南明区</item>
+        <item>云岩区</item>
+        <item>花溪区</item>
+        <item>乌当区</item>
+        <item>白云区</item>
+        <item>观山湖区</item>
+        <item>清镇市</item>
+        <item>开阳县</item>
+        <item>息烽县</item>
+    </string-array>
+
+    <!-- ******************** 云南省 ******************** -->
+    <string-array name="city_yunnan">
+        <item>请选择城市</item>
+        <item>昆明市</item>
+        <item>曲靖市</item>
+        <item>玉溪市</item>
+        <item>保山市</item>
+        <item>昭通市</item>
+        <item>丽江市</item>
+        <item>普洱市</item>
+        <item>临沧市</item>
+        <item>楚雄彝族自治州</item>
+        <item>红河哈尼族彝族自治州</item>
+        <item>文山壮族苗族自治州</item>
+        <item>西双版纳傣族自治州</item>
+        <item>大理白族自治州</item>
+        <item>德宏傣族景颇族自治州</item>
+        <item>怒江傈僳族自治州</item>
+        <item>迪庆藏族自治州</item>
+    </string-array>
+    <!-- 昆明市-区/县级市 -->
+    <string-array name="district_kunming">
+        <item>请选择区域</item>
+        <item>五华区</item>
+        <item>盘龙区</item>
+        <item>官渡区</item>
+        <item>西山区</item>
+        <item>东川区</item>
+        <item>呈贡区</item>
+        <item>晋宁区</item>
+        <item>安宁市</item>
+    </string-array>
+
+    <!-- ******************** 陕西省 ******************** -->
+    <string-array name="city_shaanxi">
+        <item>请选择城市</item>
+        <item>西安市</item>
+        <item>铜川市</item>
+        <item>宝鸡市</item>
+        <item>咸阳市</item>
+        <item>渭南市</item>
+        <item>延安市</item>
+        <item>汉中市</item>
+        <item>榆林市</item>
+        <item>安康市</item>
+        <item>商洛市</item>
+    </string-array>
+    <!-- 西安市-区/县级市 -->
+    <string-array name="district_xian">
+        <item>请选择区域</item>
+        <item>新城区</item>
+        <item>碑林区</item>
+        <item>莲湖区</item>
+        <item>灞桥区</item>
+        <item>未央区</item>
+        <item>雁塔区</item>
+        <item>阎良区</item>
+        <item>临潼区</item>
+        <item>长安区</item>
+        <item>高陵区</item>
+        <item>鄠邑区</item>
+        <item>蓝田县</item>
+        <item>周至县</item>
+    </string-array>
+
+    <!-- ******************** 甘肃省 ******************** -->
+    <string-array name="city_gansu">
+        <item>请选择城市</item>
+        <item>兰州市</item>
+        <item>嘉峪关市</item>
+        <item>金昌市</item>
+        <item>白银市</item>
+        <item>天水市</item>
+        <item>武威市</item>
+        <item>张掖市</item>
+        <item>平凉市</item>
+        <item>酒泉市</item>
+        <item>庆阳市</item>
+        <item>定西市</item>
+        <item>陇南市</item>
+        <item>临夏回族自治州</item>
+        <item>甘南藏族自治州</item>
+    </string-array>
+    <!-- 兰州市-区/县 -->
+    <string-array name="district_lanzhou">
+        <item>请选择区域</item>
+        <item>城关区</item>
+        <item>七里河区</item>
+        <item>西固区</item>
+        <item>安宁区</item>
+        <item>红古区</item>
+        <item>永登县</item>
+        <item>皋兰县</item>
+        <item>榆中县</item>
+    </string-array>
+
+    <!-- ******************** 青海省 ******************** -->
+    <string-array name="city_qinghai">
+        <item>请选择城市</item>
+        <item>西宁市</item>
+        <item>海东市</item>
+        <item>海北藏族自治州</item>
+        <item>黄南藏族自治州</item>
+        <item>海南藏族自治州</item>
+        <item>果洛藏族自治州</item>
+        <item>玉树藏族自治州</item>
+        <item>海西蒙古族藏族自治州</item>
+    </string-array>
+    <!-- 西宁市-区/县 -->
+    <string-array name="district_xining">
+        <item>请选择区域</item>
+        <item>城东区</item>
+        <item>城中区</item>
+        <item>城西区</item>
+        <item>城北区</item>
+        <item>湟中区</item>
+        <item>湟源县</item>
+        <item>大通回族土族自治县</item>
+    </string-array>
+
+    <!-- ******************** 台湾省 ******************** -->
+    <string-array name="city_taiwan">
+        <item>请选择城市</item>
+        <item>台北市</item>
+        <item>新北市</item>
+        <item>桃园市</item>
+        <item>台中市</item>
+        <item>台南市</item>
+        <item>高雄市</item>
+        <item>基隆市</item>
+        <item>新竹市</item>
+        <item>嘉义市</item>
+        <item>新竹县</item>
+        <item>苗栗县</item>
+        <item>彰化县</item>
+        <item>南投县</item>
+        <item>云林县</item>
+        <item>嘉义县</item>
+        <item>屏东县</item>
+        <item>宜兰县</item>
+        <item>花莲县</item>
+        <item>台东县</item>
+        <item>澎湖县</item>
+    </string-array>
+    <!-- 台北市-区 -->
+    <string-array name="district_taibei">
+        <item>请选择区域</item>
+        <item>中正区</item>
+        <item>大同区</item>
+        <item>中山区</item>
+        <item>松山区</item>
+        <item>大安区</item>
+        <item>万华区</item>
+        <item>信义区</item>
+        <item>士林区</item>
+        <item>北投区</item>
+        <item>内湖区</item>
+        <item>南港区</item>
+        <item>文山区</item>
+    </string-array>
+
+    <!-- ******************** 内蒙古自治区 ******************** -->
+    <string-array name="city_neimenggu">
+        <item>请选择城市</item>
+        <item>呼和浩特市</item>
+        <item>包头市</item>
+        <item>乌海市</item>
+        <item>赤峰市</item>
+        <item>通辽市</item>
+        <item>鄂尔多斯市</item>
+        <item>呼伦贝尔市</item>
+        <item>巴彦淖尔市</item>
+        <item>乌兰察布市</item>
+        <item>兴安盟</item>
+        <item>锡林郭勒盟</item>
+        <item>阿拉善盟</item>
+    </string-array>
+    <!-- 呼和浩特市-区/县 -->
+    <string-array name="district_huhehaote">
+        <item>请选择区域</item>
+        <item>新城区</item>
+        <item>回民区</item>
+        <item>玉泉区</item>
+        <item>赛罕区</item>
+        <item>土默特左旗</item>
+        <item>托克托县</item>
+        <item>和林格尔县</item>
+    </string-array>
+
+    <!-- ******************** 广西壮族自治区 ******************** -->
+    <string-array name="city_guangxi">
+        <item>请选择城市</item>
+        <item>南宁市</item>
+        <item>柳州市</item>
+        <item>桂林市</item>
+        <item>梧州市</item>
+        <item>北海市</item>
+        <item>防城港市</item>
+        <item>钦州市</item>
+        <item>贵港市</item>
+        <item>玉林市</item>
+        <item>百色市</item>
+        <item>贺州市</item>
+        <item>河池市</item>
+        <item>来宾市</item>
+        <item>崇左市</item>
+    </string-array>
+    <!-- 南宁市-区/县级市 -->
+    <string-array name="district_nanning">
+        <item>请选择区域</item>
+        <item>兴宁区</item>
+        <item>青秀区</item>
+        <item>江南区</item>
+        <item>西乡塘区</item>
+        <item>良庆区</item>
+        <item>邕宁区</item>
+        <item>武鸣区</item>
+        <item>横州市</item>
+    </string-array>
+
+    <!-- ******************** 西藏自治区 ******************** -->
+    <string-array name="city_xizang">
+        <item>请选择城市</item>
+        <item>拉萨市</item>
+        <item>日喀则市</item>
+        <item>昌都市</item>
+        <item>林芝市</item>
+        <item>山南市</item>
+        <item>那曲市</item>
+        <item>阿里地区</item>
+    </string-array>
+    <!-- 拉萨市-区/县 -->
+    <string-array name="district_lasa">
+        <item>请选择区域</item>
+        <item>城关区</item>
+        <item>堆龙德庆区</item>
+        <item>达孜区</item>
+        <item>林周县</item>
+        <item>当雄县</item>
+    </string-array>
+
+    <!-- ******************** 宁夏回族自治区 ******************** -->
+    <string-array name="city_ningxia">
+        <item>请选择城市</item>
+        <item>银川市</item>
+        <item>石嘴山市</item>
+        <item>吴忠市</item>
+        <item>固原市</item>
+        <item>中卫市</item>
+    </string-array>
+    <!-- 银川市-区/县级市 -->
+    <string-array name="district_yinchuan">
+        <item>请选择区域</item>
+        <item>兴庆区</item>
+        <item>西夏区</item>
+        <item>金凤区</item>
+        <item>灵武市</item>
+        <item>永宁县</item>
+        <item>贺兰县</item>
+    </string-array>
+
+    <!-- ******************** 新疆维吾尔自治区 ******************** -->
+    <string-array name="city_xinjiang">
+        <item>请选择城市</item>
+        <item>乌鲁木齐市</item>
+        <item>克拉玛依市</item>
+        <item>吐鲁番市</item>
+        <item>哈密市</item>
+        <item>昌吉回族自治州</item>
+        <item>博尔塔拉蒙古自治州</item>
+        <item>巴音郭楞蒙古自治州</item>
+        <item>阿克苏地区</item>
+        <item>克孜勒苏柯尔克孜自治州</item>
+        <item>喀什地区</item>
+        <item>和田地区</item>
+        <item>伊犁哈萨克自治州</item>
+        <item>塔城地区</item>
+        <item>阿勒泰地区</item>
+        <item>石河子市</item>
+        <item>阿拉尔市</item>
+        <item>图木舒克市</item>
+        <item>五家渠市</item>
+        <item>北屯市</item>
+        <item>铁门关市</item>
+        <item>双河市</item>
+        <item>可克达拉市</item>
+        <item>昆玉市</item>
+        <item>胡杨河市</item>
+    </string-array>
+    <!-- 乌鲁木齐市-区/县 -->
+    <string-array name="district_wulumuqi">
+        <item>请选择区域</item>
+        <item>天山区</item>
+        <item>沙依巴克区</item>
+        <item>新市区</item>
+        <item>水磨沟区</item>
+        <item>头屯河区</item>
+        <item>达坂城区</item>
+        <item>米东区</item>
+        <item>乌鲁木齐县</item>
+    </string-array>
+
+    <!-- ******************** 香港特别行政区 ******************** -->
+    <string-array name="city_hongkong">
+        <item>请选择城市</item>
+        <item>香港特别行政区</item>
+    </string-array>
+    <string-array name="district_hongkong">
+        <item>请选择区域</item>
+        <item>中西区</item>
+        <item>湾仔区</item>
+        <item>东区</item>
+        <item>南区</item>
+        <item>油尖旺区</item>
+        <item>深水埗区</item>
+        <item>九龙城区</item>
+        <item>黄大仙区</item>
+        <item>观塘区</item>
+        <item>北区</item>
+        <item>大埔区</item>
+        <item>沙田区</item>
+        <item>西贡区</item>
+        <item>荃湾区</item>
+        <item>屯门区</item>
+        <item>元朗区</item>
+        <item>葵青区</item>
+        <item>离岛区</item>
+    </string-array>
+
+    <!-- ******************** 澳门特别行政区 ******************** -->
+    <string-array name="city_macao">
+        <item>请选择城市</item>
+        <item>澳门特别行政区</item>
+    </string-array>
+    <string-array name="district_macao">
+        <item>请选择区域</item>
+        <item>澳门半岛</item>
+        <item>氹仔岛</item>
+        <item>路环岛</item>
+        <item>路氹城</item>
+    </string-array>
+</resources>

@@ -364,7 +364,6 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             // 保存信息
             saveUserInfo();
         } else if (id == R.id.iv_back) {
-            showToast("点击返回按钮");
             // 返回
             finish();
         }
